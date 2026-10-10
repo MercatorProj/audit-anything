@@ -64,7 +64,7 @@ Pair with `database-schema-designer` when available.
 flowchart TD
     A["Entities and constraints"] --> B["Access paths"]
     B --> C["Migrations and transactions"]
-    C --> D["Concurrency and idempotency"]
+    C --> D["Concurrency, idempotency, and recovery"]
     D --> E["Security and audit"]
     E --> F["Findings"]
 ```
@@ -74,7 +74,7 @@ Inspect:
 - Entities, identifiers, relationships, cardinality, and nullability.
 - Constraints, uniqueness, foreign keys, enums, defaults, and soft-delete semantics.
 - Normalization versus intentional denormalization; identify stale-data risks.
-- Query access paths, indexes, pagination, filtering, sorting, and expected volume.
+- Query access paths, indexes, pagination, filtering, and expected volume.
 - Migration reversibility, backfills, locks, and deployment order.
 - Transaction boundaries, concurrency, retry behavior, and idempotency.
 - Security, tenant isolation, PII retention, and auditability.
@@ -92,8 +92,8 @@ flowchart TD
     C --> D{"Shareable state?"}
     D -- "Yes" --> E["Check deep links and filters"]
     D -- "No" --> F["Check session loss"]
-    E --> G["Findings"]
-    F --> G
+    F --> G["Findings"]
+    E --> G
 ```
 
 Inspect:
@@ -135,7 +135,7 @@ Inspect:
 - Human-in-the-loop approval for mutations, destructive actions, and external calls.
 - Context freshness, stale-suggestion handling, and entity binding.
 - Message history ownership, persistence, serialization, and trust boundary.
-- Prompt and tool leakage of secrets, PII, or unrestricted external actions.
+- Prompt or tool leakage of secrets, PII, or unrestricted external actions.
 - Eval coverage for happy paths, ambiguous input, invalid schema, refusal paths, and cost/latency.
 
 Prefer findings about unverifiable claims, unsafe mutations, weak schema validation, or workflow states that cannot be resumed.
