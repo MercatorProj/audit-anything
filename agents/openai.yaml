@@ -1,0 +1,3 @@
+interface:
+  display_name: "Audit Anything"
+  short_description: "Composable, evidence-first domain audit for anything"
