@@ -2,7 +2,7 @@
 name: audit-anything
 description: Run an evidence-first domain audit by pairing with another available skill, such as frontend, UX, architecture, database, IA, or AI workflow. Use for explicit audit requests, not ordinary implementation or a quick code review.
 metadata:
-  version: 0.1.0
+  version: 0.1.1
   license: MIT
   topics: [codex, audit, quality-assurance]
 ---
